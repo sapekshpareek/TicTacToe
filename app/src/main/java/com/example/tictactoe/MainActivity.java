@@ -8,11 +8,18 @@ import android.view.View;
 import android.widget.ImageView;
 
  public class MainActivity extends AppCompatActivity {
-
+    int player = 1;
     public void load(View view){
 
         ImageView v =(ImageView) view;
-        v.setImageResource(R.drawable.cross);
+        if(player==1){
+            v.setImageResource(R.drawable.cross);
+            player = 0;
+        }
+        else{
+            v.setImageResource(R.drawable.circle);
+            player =1;
+        }
 
     }
 
