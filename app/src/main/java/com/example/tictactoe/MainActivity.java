@@ -1,10 +1,20 @@
-package com.example.tictactoe;
+ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+ public class MainActivity extends AppCompatActivity {
+
+    public void load(View view){
+
+        ImageView v =(ImageView) view;
+        v.setImageResource(R.drawable.cross);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
