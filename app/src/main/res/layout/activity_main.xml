@@ -61,10 +61,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="24dp"
             android:onClick="load"
-            android:tag="2"
+            android:tag="3"
             app:layout_column="0"
-            app:layout_row="1"
-            />
+            app:layout_row="1" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -85,10 +84,9 @@
             android:layout_marginLeft="23dp"
             android:layout_marginTop="24dp"
             android:onClick="load"
-            android:tag="2"
+            android:tag="5"
             app:layout_column="2"
-            app:layout_row="1"
-            />
+            app:layout_row="1" />
 
         <ImageView
             android:id="@+id/imageView7"
