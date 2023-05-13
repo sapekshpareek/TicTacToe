@@ -1,10 +1,12 @@
  package com.example.tictactoe;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
  public class MainActivity extends AppCompatActivity {
      boolean isWinner = false;
@@ -19,7 +21,7 @@ import android.widget.Toast;
         int tag = Integer.parseInt(v.getTag().toString());
         imageClicked = gameState[tag];
 //
-        if(isWinner == false && imageClicked ==-1) {
+        if(!isWinner && imageClicked ==-1) {
 
             if (player == 1) {
                 v.setImageResource(R.drawable.cross);
@@ -35,12 +37,23 @@ import android.widget.Toast;
             for (int[] winningState : winningStates) {
                 if (gameState[winningState[0]] == gameState[winningState[1]] && gameState[winningState[1]] == gameState[winningState[2]] && gameState[winningState[0]] > -1){
                     Toast.makeText(this, "Winner is " + (player == 0 ? 1 : 0), Toast.LENGTH_SHORT).show();
-                isWinner = true;}
+                    isWinner = true;
+                }
             }
-//           isWinner = true;
         }
+    }
 
+    public void reset(View view){
 
+        GridLayout gridLayout=findViewById(R.id.gridLayout);
+        int total_images = gridLayout.getChildCount();
+        for(int i = 0; i<total_images;i++){
+            ImageView v = (ImageView) gridLayout.getChildAt(i);
+            v.setImageDrawable(null);
+        }
+        isWinner = false;
+        imageClicked = -1;
+        Arrays.fill(gameState, -1);
     }
 
     @Override
